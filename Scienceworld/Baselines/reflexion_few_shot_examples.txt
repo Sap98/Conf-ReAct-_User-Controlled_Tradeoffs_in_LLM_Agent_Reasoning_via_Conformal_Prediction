@@ -1,0 +1,74 @@
+Your task is to measure the temperature of unknown substance B, which is located around the living room. First, focus on the thermometer. Next, focus on the unknown substance B. If the unknown substance B temperature is above 100.0 degrees celsius, place it in the red box. If the unknown substance B temperature is below 100.0 degrees celsius, place it in the green box. The boxes are located around the bathroom.
+Thought: I need to find the thermometer first, then focus on it.
+Action: teleport to kitchen
+Observation: You teleport to the kitchen.
+Thought: Let me find the thermometer.
+Action: look around
+Observation: This room is called the kitchen. ... a thermometer, currently reading a temperature of 10 degrees celsius ...
+Thought: I will pick up the thermometer.
+Action: pick up thermometer
+Observation: You move the thermometer to the inventory.
+Thought: Now I will focus on the thermometer as instructed.
+Action: focus on thermometer
+Observation: You focus on the thermometer.
+Thought: Next, I need to find unknown substance B in the living room.
+Action: teleport to living room
+Observation: You teleport to the living room.
+Thought: I will pick up substance B.
+Action: pick up unknown substance B
+Observation: You move the unknown substance B to the inventory.
+Thought: I will focus on substance B.
+Action: focus on unknown substance B
+Observation: You focus on the unknown substance B.
+Thought: Now I will measure its temperature.
+Action: use thermometer on unknown substance B
+Observation: the thermometer measures a temperature of 28 degrees celsius
+Thought: 28C is below 100C, so substance B goes in the green box. I will go to the bathroom.
+Action: teleport to bathroom
+Observation: You teleport to the bathroom.
+Thought: I will place substance B in the green box.
+Action: move unknown substance B to green box
+Observation: No known action matches that input.
+Thought: Let me try a different phrasing.
+Action: put unknown substance B in green box
+Observation: No known action matches that input.
+Thought: I will try place instead.
+Action: place unknown substance B in green box
+Observation: No known action matches that input.
+STATUS: FAIL
+New plan: I correctly focused on both objects and measured the temperature, but I could not place substance B in the green box because I did not use the "in inventory" qualifier. When the target object is in my inventory, the engine expects `move <obj> in inventory to <container>`. In the next trial I will use `move unknown substance B in inventory to green box` to place it in the correct box.
+
+Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.
+Thought: To boil water I need a container with water on a stove. The kitchen has these.
+Action: teleport to kitchen
+Observation: You teleport to the kitchen.
+Thought: I will get a pot from the cupboard.
+Action: pick up metal pot
+Observation: You move the metal pot to the inventory.
+Thought: I will fill the pot at the sink.
+Action: move metal pot to sink
+Observation: You move the metal pot to the sink.
+Thought: I will activate the sink to fill the pot with water.
+Action: activate sink
+Observation: The sink is now activated.
+Thought: The pot now has water. I will take it.
+Action: pick up metal pot
+Observation: You move the metal pot to the inventory.
+Thought: The task says to focus on the substance first.
+Action: focus on substance in metal pot
+Observation: You focus on the water.
+Thought: Now I will place the pot on the stove.
+Action: move metal pot to stove
+Observation: You move the metal pot to the stove.
+Thought: I will wait for the water to boil.
+Action: wait1
+Observation: You wait.
+Thought: Still waiting.
+Action: wait1
+Observation: You wait.
+Action: wait1
+Observation: You wait.
+Action: wait1
+Observation: You wait.
+STATUS: FAIL
+New plan: I placed the metal pot containing water on the stove but I never activated the stove, so the water never heated and the task could not complete. In the next trial I will: pick up the metal pot, fill it at the sink with `activate sink` then `deactivate sink`, focus on the substance in the metal pot, move the metal pot to the stove, then immediately use `activate stove` to turn the stove on, and then wait until the water changes its state of matter to a gas.
