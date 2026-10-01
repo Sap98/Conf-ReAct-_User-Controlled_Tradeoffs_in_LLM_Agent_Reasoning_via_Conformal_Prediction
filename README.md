@@ -5,5 +5,5 @@ To get started:
 
 1. Clone this repo:
 ```bash
-git clone https://github.com/andyz245/LanguageAgentTreeSearch && cd LanguageAgentTreeSearch/hotpot
+https://github.com/Sap98/Conf-ReAct-_User-Controlled_Tradeoffs_in_LLM_Agent_Reasoning_via_Conformal_Prediction.git
 ```
